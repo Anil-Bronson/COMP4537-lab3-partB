@@ -6,7 +6,7 @@ const PORT = process.env.PORT || 3000;
 
 http.createServer((req, res) => {
     const q = url.parse(req.url, true).query;
-    const name = q.name || 'Error';
+    const name = q.name || '_';
     const message = messages.MESSAGE.replace('%1', name).replace('%2', dt.getDate());
     res.writeHead(200, {'Content-Type': 
     'text/html'});
